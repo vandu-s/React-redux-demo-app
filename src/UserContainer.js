@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from ' ./redux';
+import { fetchUser } from './redux';
 
 const UserContainer = ({ userData, fetchUser }) => {
   useEffect(() => {
@@ -17,6 +17,7 @@ const UserContainer = ({ userData, fetchUser }) => {
         {userData &&
           userData.users &&
           userData.users.map((user) => <p>{user.name}</p>)}
+          <div></div>
       </div>
     </div>
   );
@@ -28,7 +29,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUsers: () => dispatch(fetchUser()),
+    fetchUser: () => dispatch(fetchUser()),
   };
 };
 
